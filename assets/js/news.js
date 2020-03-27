@@ -5,7 +5,7 @@ fetch('https://newsapi.org/v2/everything?q=covid-19&apiKey=a4ffcc406eac44ee8b834
         data.articles.forEach(article => {
             console.log(data)
             let test = "unknown"
-            document.getElementById("content").innerHTML += `
+            document.getElementById("content1").innerHTML += `
     <figure>
     <img src=${article.urlToImage} alt="">
     <figcaption>

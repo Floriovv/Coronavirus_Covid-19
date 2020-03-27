@@ -209,8 +209,10 @@ img{
 
 
 /* =====NEWS===== */
-#content {
+#content1 {
   display: flex;
+  flex-direction: row;
+
 }
 .section-news{
   background-color: #fff;
