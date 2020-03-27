@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html{
   scroll-behavior: smooth;
 }
@@ -108,4 +109,96 @@ body{
 
 .linkblock{
   
+=======
+#content{
+    width: 40%;
+    height: 80vh;
+    margin: 3vh auto;
+    background-color: rgb(204, 204, 204);
+    box-shadow: 0px 0px 2px rgb(212, 212, 212);
+    border-radius: 4px;
+    text-align: center;
+    padding: 5vh 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#hinweise-div{
+    letter-spacing: 1px;
+    text-align: center;
+    display: none;
+}
+#hinweise-div > h1{
+    font-size: 2em;
+    text-align: left;
+}
+#hinweise-div > p{
+    font-size: 1.2em;
+    text-align: left;
+}
+#start-btn{
+    width: 300px;
+    height: 40px;
+    background-color: rgb(240, 128, 0);
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid red;
+    transition-duration: 0.3s;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+#frageBogen-div{
+    display: none;
+}
+#FragebogenStarten{
+    width: 300px;
+    height: 40px;
+    background-color: rgb(240, 128, 0);
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid red;
+    transition-duration: 0.3s;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+#start-btn:hover , #FragebogenStarten:hover{
+    background-color: rgb(134, 20, 0);
+    border: 1px solid red;
+    letter-spacing: 2px;
+    transition-duration: 0.3s;
+    font-size: 1.1em;
+}
+#frageBogen-div{
+    
+}
+#frageBogen-div >h1{ 
+    text-align: left;
+}
+#frageBogen-div >button{ 
+    width: 200px;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid red;
+    transition-duration: 0.3s;
+    box-sizing: border-box;
+    border-radius: 8px;
+    opacity: 0.7;
+}
+#frageBogen-div >button:nth-of-type(1){
+    background-color: rgb(255, 0, 0);
+}
+#frageBogen-div >button:nth-of-type(2){
+    background-color: rgb(0, 0, 255);
+}
+#frageBogen-div >button:hover{
+    opacity: 1;
+>>>>>>> ce48d7551f8a6bd312819b78bca39ec554efe469
 }
