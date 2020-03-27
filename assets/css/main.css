@@ -263,7 +263,7 @@ figure {
 footer{
   background-color: rgb(94, 94, 94);
   box-shadow: 0px 0px 4px rgb(156, 156, 156);
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -285,7 +285,7 @@ footer > ul{
   opacity: 0.8;
 }
 .fa-facebook-square{
-    background-color: rgb(52, 52, 143);
+  background-color: rgb(52, 52, 143);
   display: inline-block;
   padding: 5px 100px;
   font-size: 2em;
@@ -297,7 +297,7 @@ footer > ul{
   opacity: 0.8;
 }
 .fa-instagram-square{
-    background-color: rgb(255, 82, 82);
+  background-color: rgb(255, 82, 82);
   display: inline-block;
   padding: 5px 100px;
   font-size: 2em;
@@ -309,7 +309,7 @@ footer > ul{
   opacity: 0.8;
 }
 .fa-envelope-square{
-    background-color: rgb(134, 255, 86);
+  background-color: rgb(134, 255, 86);
   display: inline-block;
   padding: 5px 100px;
   font-size: 2em;
@@ -320,24 +320,7 @@ footer > ul{
 .fa-envelope-square:hover{
   opacity: 0.8;
 }
-.index-footer-terms{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2vh;
-  font-size: 0.7em;
-  background-color: rgba(19, 18, 17, 0.247);
-  padding: 1.5vh 5%;
-  font-family: Sct2;
-  opacity: 1;
-  color: white;
-}
-.index-footer-terms > span:nth-of-type(3) > a{
-  color:#f4f4f4  ;
-  text-decoration: none;
-}
-.index-footer-terms > span:nth-of-type(3) > a:hover{
-  text-decoration: underline;
-}
+
 footer > form{
   padding-left: 18.5%;
 }
