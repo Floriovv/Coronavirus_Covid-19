@@ -10,6 +10,14 @@ body{
   flex-direction: column;
 }
 
+.main{
+  margin-top: 100px;
+}
+
+img{
+  max-width: 100%;
+}
+
 .anchor-nodeco{
   text-decoration: none;
   color: unset;
@@ -197,3 +205,55 @@ body{
 #frageBogen-div >button:hover{
     opacity: 1;
 }
+
+
+/* =====NEWS===== */
+#content {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  justify-content: space-between;
+  text-align: center;
+  background-color: white;
+  width: 80%;
+
+}
+.section-news{
+  background-color: #fff;
+  margin-top: 2%;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+}
+figure {
+  width: 100%;
+}
+
+.title-h1{
+  font-size: 3.7em;
+  width: 90%;
+  text-align: center;
+  color: #000;
+  animation-name: anim, anim2, anim3;
+  animation-duration: 0.77s;
+  animation-iteration-count: infinite;
+}
+@keyframes anim {
+  from {background-color: red;}
+  to {background-color: black;}
+}
+@keyframes anim2 {
+  from {color: red;}
+  to {color: #fff;}
+}
+@keyframes anim3 {
+  from {margin-right: 40px;}
+  to {margin-left: 40px;}
+}
+
+iframe{
+  width: 100%;
+}
+
+/* ========= */
