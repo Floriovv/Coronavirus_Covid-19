@@ -1,0 +1,111 @@
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Noto Sans TC', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.anchor-nodeco{
+  text-decoration: none;
+  color: unset;
+}
+
+.header{
+  background-color: #861717;
+  display: flex;
+  flex-direction: row;
+  max-height: 165px;
+  position: fixed;
+  width: 100vw;
+  max-height: 100%;
+}
+
+.navigation{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-list{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0px 10px;
+  overflow: hidden;
+  margin: 1px;
+}
+
+.list{
+  padding: 5px 20px;
+  color: rgb(226, 211, 211);
+  background-color: #621313;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: padding 1s, font-size .5s;
+}
+
+.list:active{
+  background-color: #420e0e;
+}
+
+.list:hover, .hover{
+  z-index: 9999;
+  border: .5px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 25px;
+  margin: 0;
+  transition: padding .5s, font-size .5s;
+}
+
+.list-border-left{
+  border-radius: 10px 0px 0px 10px;
+}
+
+.list-border-left:hover{
+  border-radius: 10px;
+}
+
+.list-border-right{
+  border-radius: 0px 10px 10px 0px;
+}
+
+.list-border-right:hover{
+  border-radius: 10px;
+}
+
+.list-border-middel:hover, .hover{
+  border-radius: 10px;
+}
+
+.logo{
+  height: 100px;
+  width: 200px;
+}
+
+.button{
+  font-size: 20px;
+  width: 150px;
+  height: 50px;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.button:focus{
+  outline: none;
+}
+
+.button:hover{
+  background-color: lightgray;
+}
+
+.linkblock{
+  
+}
