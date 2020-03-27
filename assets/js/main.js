@@ -81,25 +81,36 @@ let ergebnisArray = [
     <h1>Bleiben Sie zuhause</h1>
     <p>Bleiben Sie zuhause.
 Sie hatten in letzter Zeit weder Kontakt zu einer infizierten Person, noch waren Sie in einem Risikogebiet (laut Einstufung des Robert Koch Instituts). Ihre beschriebene Symptomatik können Sie aktuell zu Hause auskurieren oder weist nicht auf eine Infektion hin: Das sind sehr gute Nachrichten! Dennoch gibt es einige sehr wichtige Maßnahmen, die Sie auch zu Hause weiterhin einhalten müssen. Dazu gehört unter anderem eine sorgfältige Händehygiene. Informationen dazu finden Sie hier.
-
 Wenn Sie Ihr Haus dennoch verlassen, achten Sie auf ausreichend Abstand (> 2m) zu Ihren Mitmenschen. Fassen Sie nach Möglichkeit nichts an und wenn doch, vermeiden Sie Berührungen in Ihrem Gesicht und waschen Sie sich nach dem Nachhausekommen umgehend die Hände. Achten Sie auf die Verhaltensregeln: stets in die Ellenbeuge oder ins Taschentuch husten oder niesen.</p>`,
     `
-<h1>50%</h1>
-<p></p>`    ,
-    `
-<h1>75%</h1>
-<p></p>`,
-    `
 <h1>Melden Sie sich</h1>
-<p>Die Eindämmung des Virus hat momentan oberste Priorität. Deshalb steht jeder, der potentiell infiziert ist, in der Pflicht, dies den zuständigen Behörden zu melden. Entscheidend an dieser Stelle ist, dass Sie unter keine Umständen einfach in eine Arztpraxis gehen, um sich untersuchen zu lassen.
-
+<p>Sie hatten direkten Kontakt zu einer Person mit einer bestätigten Corona-Infektion? Sie kommen gerade aus einem Risikogebiet und fühlen sich jetzt kränklich? Wenn Sie eine oder mehrere dieser Kriterien erfüllen besteht der Verdacht auf eine Infektion mit dem Coronavirus (SARS-CoV-2).
+Die Eindämmung des Virus hat momentan oberste Priorität. Deshalb steht jeder, der potentiell infiziert ist, in der Pflicht, dies den zuständigen Behörden zu melden. Entscheidend an dieser Stelle ist, dass Sie unter keine Umständen einfach in eine Arztpraxis gehen, um sich untersuchen zu lassen.
 Hier können Sie sich melden:
 Rufen Sie Ihren Hausarzt an
 Melden Sie sich beim kassenärztlichen Bereitschaftsdienst (116117)
 Melden Sie sich direkt bei der Senatsgesundheitsverwaltung (030/90282828)
-
+</p>`    ,
+    `
+<h1>Melden Sie sich</h1>
+<p>Die Eindämmung des Virus hat momentan oberste Priorität. Deshalb steht jeder, der potentiell infiziert ist, in der Pflicht, dies den zuständigen Behörden zu melden. Entscheidend an dieser Stelle ist, dass Sie unter keine Umständen einfach in eine Arztpraxis gehen, um sich untersuchen zu lassen.
+Hier können Sie sich melden:
+Rufen Sie Ihren Hausarzt an
+Melden Sie sich beim kassenärztlichen Bereitschaftsdienst (116117)
+Melden Sie sich direkt bei der Senatsgesundheitsverwaltung (030/90282828)
 Da aktuell nur ein Verdacht auf eine Infektion besteht, entscheidet sich das weitere Vorgehen anhand der Symptome. Zeigen Sie bis dato keinerlei Symptome, kommt dennoch eine 14-tägige häusliche Quarantäne auf Sie zu, da die Inkubationszeit des Coronavirus bis zu 14 Tage andauern kann. Ohne Symptome wird vorerst kein Test durchgeführt. Währenddessen werden Sie aufgefordert, jeglichen Kontakt zu anderen Menschen zu meiden.</p>`,
-
+    `
+<h1>Melden Sie sich</h1>
+<p>Die Eindämmung des Virus hat momentan oberste Priorität. Deshalb steht jeder, der potentiell infiziert ist, in der Pflicht, dies den zuständigen Behörden zu melden. Entscheidend an dieser Stelle ist, dass Sie unter keine Umständen einfach in eine Arztpraxis gehen, um sich untersuchen zu lassen.
+Hier können Sie sich melden:
+Rufen Sie Ihren Hausarzt an
+Melden Sie sich beim kassenärztlichen Bereitschaftsdienst (116117)
+Melden Sie sich direkt bei der Senatsgesundheitsverwaltung (030/90282828)
+Da aktuell nur ein Verdacht auf eine Infektion besteht, entscheidet sich das weitere Vorgehen anhand der Symptome. Zeigen Sie bis dato keinerlei Symptome, kommt dennoch eine 14-tägige häusliche Quarantäne auf Sie zu, da die Inkubationszeit des Coronavirus bis zu 14 Tage andauern kann. Ohne Symptome wird vorerst kein Test durchgeführt. Währenddessen werden Sie aufgefordert, jeglichen Kontakt zu anderen Menschen zu meiden.</p>
+<div>
+<input type="text" placeholder="Schreiben Sie Ihre Adresse">
+<input type="submit">
+</div>`,
 ]
 let prozent = 0;
 let btn = document.getElementsByClassName("antwort");
