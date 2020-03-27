@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2c80cd9059.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+</head>
+<body>
+    <style>
+        .xyx {
+            text-align: center;
+        }
+    </style>
+    <div class="header">
+        <div class="navigation">
+            <a href="http://127.0.0.1:5500/index.html"><img src="assets/img/Corona.png" alt="Logo" class="logo" /></a>
+            <ul class="nav-list">
+                <li class="list-border-left list"><a href="http://127.0.0.1:5500/index.html"
+                        class="anchor-nodeco">Home</a></li>
+                <li class="list-border-middel list"><a href="http://127.0.0.1:5500/news.html"
+                        class="anchor-nodeco">News</a></li>
+                <li class="list-border-middel list"><a href="http://127.0.0.1:5500/Fragebogen.html"
+                        class="anchor-nodeco">Fragebogen</a></li>
+                <li class="list-border-middel list"><a href="http://127.0.0.1:5500/forum.html" class="anchor-nodeco">Forum</a></li>
+                <li class="list-border-right list"><a href="http://127.0.0.1:5500/about.html"
+                        class="anchor-nodeco">About us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="xyx">
+        <section class="chat">
+            <h1>Covid-19 Forum</h1>
+            <div id="loginScreen">
+                <div id="loginForm">
+                    <input type="text" name="username" placeholder="username"><br><input type="button" name="join"
+                        value="Join">
+                </div>
+            </div>
+            <main>
+                <div id="chatBox">
+                    <div id="mainChat">
+                    </div>
+                    <div id="messageBar">
+                        <input type="text" name="message" placeholder="Message ..."><input type="button" name="send"
+                            value="send">
+                    </div>
+                </div>
+            </main>
+            <script>
+                $(document).ready(function () {
+                    socket = io('http://91.177.24.77:3007');
+                    chatlog = "";
+                    username = "Anonymous";
+                    id = "";
+                    typing = false;
+                    $('input[name=send]').on('click', function () {
+                        sendMessage();
+                    })
+                    $('input[name=join]').on('click', function () {
+                        username = $("input[name=username]").val();
+                        socket.emit("joined", { username: username });
+                        if (username !== "") {
+                            $('#loginScreen').hide();
+                        }
+                    })
+                    socket.on('message', function (data) { //recieve message
+                        playSound("message");
+                        addMessage(data.message, data.username, false);
+                    })
+                    socket.on("id", function (data) {
+                        id = data;
+                    })
+                    socket.on("chatLog", function (data) {
+                        data.forEach(function (element) {
+                            if (element.id == id) {
+                                addMessage(element.message, element.username, true);
+                            } else {
+                                addMessage(element.message, element.username, false);
+                            }
+                        })
+                    })
+                    function addMessage(message, username, me) {
+                        if (me) {
+                            chatlog += `<div class='message me'><div class='innerMessage'><p><b>${username}</b>: ${message}</p></div></div>`;
+                        } else {
+                            chatlog += `<div class='message'><div class='innerMessage'><p><b>${username}</b>: ${message}</p></div></div>`;
+                        }
+                        $("#mainChat").html(chatlog);
+                        $('#mainChat').scrollTop($('#mainChat')[0].scrollHeight); //scroll down when new message appears
+                    }
+                    function playSound(sound) {
+                        var audio = new Audio(`https://elitfox.be/sololearn/projects/chat/audio/${sound}.mp3`);
+                        audio.play();
+                    }
+                    $('input[name=message]').on('keydown', function (e) {
+                        switch (e.keyCode) {
+                            case 13:
+                                sendMessage();
+                                break;
+                        }
+                    })
+                    function sendMessage() {
+                        message = $("input[name=message]").val();
+                        $("input[name=message]").val("");
+                        $("input[name=message]").focus();
+                        addMessage(message, username, true);
+                        if (message !== "") {
+                            socket.emit("message", { username: username, message: message }); //send message
+                        }
+                    }
+                    $('input[name=message]').on('keydown', function () {
+                        socket.emit("typing");
+                    })
+                    socket.on('typing', function () {
+                        if (typing == false) {
+                            $("#mainChat").html($("#mainChat").html() + "<div class='message' id='typing'><div class='innerMessage'><p>Someone is typing a message ...</p></div></div>");
+                            typing = true;
+                            $('#mainChat').scrollTop($('#mainChat')[0].scrollHeight); //scroll down when new message appears
+                        }
+                    })
+                    setInterval(function () {
+                        typing = false;
+                        $('#typing').remove();
+                    }, 5000)
+                });
+            </script>
+        </section>
+        <section class="login-script">
+            <h1>Registrieren Sie sich hier</h1>
+            <form action="?register=1" method="post">
+                E-Mail:<br>
+                <input type="email" size="40" maxlength="250" name="email"><br><br>
+                Dein Passwort:<br>
+                <input type="password" size="40" maxlength="250" name="passwort"><br>
+                Passwort wiederholen:<br>
+                <input type="password" size="40" maxlength="250" name="passwort2"><br><br>
+                <input type="submit" value="Abschicken">
+            </form>
+            <embed src="login.php">
+        </section>
+    </div>
+    <div class="footer">
+        <div class="linkblock">
+            <a href="#">Tests</a>
+            <a href="#">Hallo</a>
+            <a href="#">Peace</a>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
